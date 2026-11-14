@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f2eb">
+  <meta name="description" content="Castle City Tattoo — a private, appointment-only tattoo studio in Greencastle, Indiana. Black & gray by Rachael, colour by Emily.">
+
+  <title>Castle City Tattoo | Greencastle, Indiana</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #f5f2eb;
+      --paper-dark: #ebe7dd;
+      --ink: #201f1c;
+      --muted: #77736b;
+      --line: #dcd7cc;
+      --accent: #83745e;
+      --white: #fffdf8;
+      --shadow: 0 18px 45px rgba(32, 31, 28, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(131,116,94,.09), transparent 32rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    ::selection {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -.02em;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      margin: 14px 0 18px;
+    }
+
+    h3 {
+      font-size: 1.45rem;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 42px;
+    }
+
+    .section-head p,
+    .muted {
+      color: var(--muted);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 14px 24px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: .92rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #35332e;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .button.secondary:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .button:active {
+      transform: translateY(0);
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245,242,235,.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(220,215,204,.8);
+    }
+
+    .header-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      font-family: "DM Sans", sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .nav {
+      display: none;
+      align-items: center;
+      gap: 30px;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .nav a {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 2px;
+      height: 1px;
+      background: var(--ink);
+      transition: right .25s ease;
+    }
+
+    .nav a:hover::after {
+      right: 0;
+    }
+
+    .header-cta {
+      min-height: 42px;
+      padding: 10px 18px;
+      font-size: .84rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 72px 0 88px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 10vw, 6.8rem);
+      margin: 20px 0 24px;
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+      color: #555149;
+      font-size: clamp(1.02rem, 2.4vw, 1.22rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .hero-notes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 26px;
+      margin-top: 38px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .hero-notes span::before {
+      content: "— ";
+      color: var(--accent);
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 480px;
+    }
+
+    .art-card {
+      position: absolute;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .art-card.main {
+      inset: 0 8% 12% 0;
+      border-radius: 190px 190px 24px 24px;
+    }
+
+    .art-card.small {
+      right: 0;
+      bottom: 0;
+      width: 47%;
+      aspect-ratio: 1;
+      border-radius: 24px;
+      transform: rotate(3deg);
+    }
+
+    .art-card svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .art-label {
+      position: absolute;
+      left: 18px;
+      bottom: 16px;
+      padding: 8px 12px;
+      background: rgba(245,242,235,.92);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .placeholder-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: .82rem;
+      text-align: right;
+    }
+
+    /* Intro */
+    .intro {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-grid {
+      display: grid;
+      gap: 36px;
+    }
+
+    .intro-copy p {
+      color: #555149;
+      margin-bottom: 18px;
+    }
+
+    .values {
+      display: grid;
+      gap: 14px;
+    }
+
+    .value {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+    }
+
+    .value strong {
+      display: block;
+      margin-bottom: 5px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.15rem;
+    }
+
+    .value p {
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    /* Portfolio */
+    .artist-block + .artist-block {
+      margin-top: 72px;
+      padding-top: 72px;
+      border-top: 1px solid var(--line);
+    }
+
+    .artist-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .artist-head p {
+      max-width: 520px;
+      color: var(--muted);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: .86;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--white);
+    }
+
+    .gallery-item.tall {
+      grid-row: span 2;
+      aspect-ratio: auto;
+      min-height: 100%;
+    }
+
+    .gallery-item svg {
+      width: 100%;
+      height: 100%;
+      transition: transform .45s ease;
+    }
+
+    .gallery-item:hover svg {
+      transform: scale(1.035);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      background: rgba(245,242,235,.94);
+      border: 1px solid rgba(220,215,204,.9);
+      border-radius: 12px;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .gallery-caption small {
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* Healed vs fresh */
+    .healed {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .healed .eyebrow {
+      color: #c9bda9;
+    }
+
+    .healed .section-head p {
+      color: #b8b3a9;
+    }
+
+    .comparison {
+      display: grid;
+      gap: 16px;
+    }
+
+    .comparison-card {
+      padding: 28px;
+      border: 1px solid #45433e;
+      border-radius: var(--radius);
+      background: #292824;
+    }
+
+    .comparison-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .comparison-card p {
+      color: #bbb6ac;
+    }
+
+    .comparison-card ul {
+      margin: 18px 0 0 18px;
+      color: #d7d2c7;
+    }
+
+    .comparison-card li + li {
+      margin-top: 8px;
+    }
+
+    .comparison-arrow {
+      display: none;
+      align-self: center;
+      justify-self: center;
+      font-size: 2rem;
+      color: #c9bda9;
+    }
+
+    /* Booking */
+    .booking-grid {
+      display: grid;
+      gap: 42px;
+    }
+
+    .booking-info p {
+      color: #555149;
+      margin-bottom: 18px;
+    }
+
+    .policy {
+      margin: 28px 0;
+      padding: 24px;
+      border-left: 3px solid var(--accent);
+      background: var(--white);
+    }
+
+    .policy strong {
+      display: block;
+      margin-bottom: 6px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.2rem;
+    }
+
+    .policy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .booking-form {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .booking-form h3 {
+      margin-bottom: 8px;
+    }
+
+    .booking-form > p {
+      color: var(--muted);
+      font-size: .94rem;
+      margin-bottom: 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: .84rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 52px;
+      padding: 13px 15px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      outline: none;
+      background: var(--paper);
+      color: var(--ink);
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .field textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(131,116,94,.13);
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    /* FAQ */
+    .faq {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 4px;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      text-align: left;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .faq-icon {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-family: "DM Sans", sans-serif;
+      font-size: 1.2rem;
+      transition: transform .25s ease;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: none;
+      max-width: 760px;
+      padding: 0 44px 26px 4px;
+      color: var(--muted);
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      padding: 64px 0 34px;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 36px;
+      padding-bottom: 44px;
+    }
+
+    .footer-brand {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+
+    .footer-grid p,
+    .footer-grid a {
+      color: var(--muted);
+    }
+
+    .footer-grid h4 {
+      margin-bottom: 12px;
+      font-size: .82rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .back-top {
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Tablet */
+    @media (min-width: 700px) {
+      .nav {
+        display: flex;
+      }
+
+      .hero {
+        padding: 104px 0 112px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.05fr .95fr;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1.1fr .9fr;
+        align-items: start;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .comparison {
+        grid-template-columns: 1fr auto 1fr;
+      }
+
+      .comparison-arrow {
+        display: block;
+      }
+
+      .booking-grid {
+        grid-template-columns: .9fr 1.1fr;
+        align-items: start;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+      .container {
+        width: min(1180px, calc(100% - 64px));
+      }
+
+      .section {
+        padding: 120px 0;
+      }
+
+      .booking-form {
+        padding: 36px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Castle City Tattoo home">
+        <span class="brand-mark">CC</span>
+        <span>Castle City Tattoo</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#artists">Artists</a>
+        <a href="#booking">Booking</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a class="button header-cta" href="#booking">Book now</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Greencastle, Indiana</span>
+
+          <h1>Castle City<br><em>Tattoo</em></h1>
+
+          <p class="hero-copy">
+            A private, appointment-only tattoo studio where considered work takes
+            precedence over walk-in noise. Quiet space. Careful consultation.
+            Artwork made to live with you beautifully.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="#booking">Request an appointment</a>
+            <a class="button secondary" href="#portfolio">View portfolios</a>
+          </div>
+
+          <div class="hero-notes" aria-label="Studio highlights">
+            <span>By appointment only</span>
+            <span>Deposit required</span>
+            <span>Private studio</span>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Decorative placeholder tattoo artwork">
+          <div class="art-card main">
+            <svg viewBox="0 0 600 680" role="img" aria-label="Placeholder botanical tattoo artwork">
+              <rect width="600" height="680" fill="#eee9dd"/>
+              <circle cx="300" cy="300" r="205" fill="none" stroke="#201f1c" stroke-width="2"/>
+              <circle cx="300" cy="300" r="165" fill="none" stroke="#83745e" stroke-width="1" stroke-dasharray="4 8"/>
+              <path d="M300 120 C380 210 390 300 300 430 C210 300 220 210 300 120Z" fill="#201f1c"/>
+              <path d="M300 175 C340 235 345 300 300 375 C255 300 260 235 300 175Z" fill="#f5f2eb"/>
+              <path d="M300 120 V500" stroke="#83745e" stroke-width="2"/>
+              <path d="M300 300 C220 260 180 205 165 130 C245 155 290 215 300 300Z" fill="#d8d0bf"/>
+              <path d="M300 330 C385 295 420 245 435 175 C355 195 310 255 300 330Z" fill="#d8d0bf"/>
+              <text x="300" y="585" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#201f1c">Placeholder artwork</text>
+              <text x="300" y="615" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" letter-spacing="3" fill="#77736b">NOT STUDIO WORK</text>
+            </svg>
+            <span class="art-label">Featured placeholder</span>
+          </div>
+
+          <div class="art-card small">
+            <svg viewBox="0 0 400 400" role="img" aria-label="Placeholder colour tattoo artwork">
+              <rect width="400" height="400" fill="#f8e8dc"/>
+              <circle cx="200" cy="185" r="115" fill="#d96f4e"/>
+              <circle cx="200" cy="185" r="76" fill="#f2b544"/>
+              <circle cx="200" cy="185" r="38" fill="#4f7d6b"/>
+              <path d="M70 330 C140 285 260 285 330 330" fill="none" stroke="#201f1c" stroke-width="8" stroke-linecap="round"/>
+              <text x="200" y="375" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" letter-spacing="3" fill="#201f1c">PLACEHOLDER</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <p class="placeholder-note">Gallery images on this page are placeholders and are not presented as the studio’s real work.</p>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="section intro">
+      <div class="container intro-grid">
+        <div class="intro-copy">
+          <span class="eyebrow">The studio</span>
+          <h2>Small by design.<br>Intentional by nature.</h2>
+          <p>
+            Castle City Tattoo is a private studio in Greencastle, Indiana, built
+            around thoughtful consultation and appointments that are never rushed.
+            Every booking begins with a conversation about placement, scale,
+            longevity and how the piece will age.
+          </p>
+          <p>
+            Choose Rachael for refined black & gray work or Emily for colour
+            pieces. If you are unsure, tell us about the idea and we will help
+            guide you to the right artist.
+          </p>
+          <a class="button secondary" href="#booking">Start your enquiry</a>
+        </div>
+
+        <div class="values">
+          <div class="value">
+            <strong>Private & appointment-only</strong>
+            <p>No walk-ins. Your appointment time is reserved for your consultation and tattoo.</p>
+          </div>
+          <div class="value">
+            <strong>Portfolio first</strong>
+            <p>Review each artist’s gallery before choosing who best fits your idea.</p>
+          </div>
+          <div class="value">
+            <strong>Built to age well</strong>
+            <p>Placement, contrast and aftercare are discussed before ink ever touches skin.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Portfolio</span>
+          <h2>Work by artist</h2>
+          <p>
+            Explore placeholder galleries below. In the finished studio site,
+            these spaces should be replaced with each artist’s current portfolio.
+          </p>
+        </div>
+
+        <div class="artist-block" id="artists">
+          <div class="artist-head">
+            <div>
+              <span class="eyebrow">Rachael</span>
+              <h3>Black & gray</h3>
+            </div>
+            <p>Monochrome pieces centred on contrast, detail and timeless composition.</p>
+          </div>
+
+          <div class="gallery">
+            <article class="gallery-item tall">
+              <svg viewBox="0 0 500 700" aria-label="Placeholder black and gray artwork one">
+                <rect width="500" height="700" fill="#e8e3d8"/>
+                <path d="M250 80 C360 190 380 340 250 600 C120 340 140 190 250 80Z" fill="#201f1c"/>
+                <path d="M250 160 C310 250 320 350 250 500 C180 350 190 250 250 160Z" fill="#f5f2eb"/>
+                <path d="M250 80 V600" stroke="#83745e" stroke-width="3"/>
+                <text x="250" y="652" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" letter-spacing="4" fill="#201f1c">PLACEHOLDER</text>
+              </svg>
+              <div class="gallery-caption"><span>Botanical study</span><small>Placeholder</small></div>
+            </article>
+
+            <article class="gallery-item">
+              <svg viewBox="0 0 500 420" aria-label="Placeholder black and gray artwork two">
+                <rect width="500" height="420" fill="#ddd8cd"/>
+                <circle cx="250" cy="200" r="105" fill="none" stroke="#201f1c" stroke-width="12"/>
+                <circle cx="250" cy="200" r="55" fill="#201f1c"/>
+                <path d="M60 350 H440" stroke="#83745e" stroke-width="4"/>
+                <text x="250" y="390" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" fill="#201f1c">PLACEHOLDER</text>
+              </svg>
+              <div class="gallery-caption"><span>Geometric</span><small>Placeholder</small></div>
+            </article>
+
+            <article class="gallery-item">
+              <svg viewBox="0 0 500 420" aria-label="Placeholder black and gray artwork three">
+                <rect width="500" height="420" fill="#f1eee6"/>
+                <path d="M80 300 C160 90 340 90 420 300" fill="none" stroke="#201f1c" stroke-width="14" stroke-linecap="round"/>
+                <path d="M125 300 C180 170 320 170 375 300" fill="none" stroke="#83745e" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="250" cy="190" r="28" fill="#201f1c"/>
+                <text x="250" y="375" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" fill="#201f1c">PLACEHOLDER</text>
+              </svg>
+              <div class="gallery-caption"><span>Fine line</span><small>Placeholder</small></div>
+            </article>
+
+            <article class="gallery-item">
+              <svg viewBox="0 0 500 420" aria-label="Placeholder black and gray artwork four">
+                <rect width="500" height="420" fill="#292824"/>
+                <path d="M115 320 L250 95 L385 320Z" fill="#f5f2eb"/>
+                <path d="M175 320 L250 180 L325 320Z" fill="#292824"/>
+                <text x="250" y="378" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" fill="#f5f2eb">PLACEHOLDER</text>
+              </svg>
+              <div class="gallery-caption"><span>Illustrative</span><small>Placeholder</small></div>
+            </article>
+
+            <article class="gallery-item">
+              <svg viewBox="0 0 500 420" aria-label="Placeholder black and gray artwork five">
+                <rect width="500" height="420" fill="#e6e0d3"/>
+                <path d="M95 330 C170 170 330 170 405 330Z" fill="#201f1c"/>
+                <path d="M145 330 C195 230 305 230 355 330Z" fill="#e6e0d3"/>
+                <circle cx="250" cy="255" r="34" fill="#83745e"/>
+                <text x="250" y="385" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" fill="#201f1c">PLACEHOLDER</text>
+              </svg>
+              <div class="gallery-caption"><span>Traditional</span><small>Placeholder</small></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="artist-block">
+          <div class="artist-head">
+            <div>
+              <span class="eyebrow">Emily</span>
+              <h3>Colour pieces</h3>
+            </div>
+            <p>Colour-led work designed around balanced palettes, clear shapes and lasting saturation.</p>
+          </div>
+
+          <div class="gallery">
+            <article class="gallery-item tall">
+              <svg viewBox="0 0 500 700" aria-label="Placeholder colour artwork one">
+                <rect width="500" height="700" fill="#f7e9dc"/>
+                <circle cx="250" cy="280" r="150" fill="#d96f4e"/>
+                <circle cx="250" cy="280" r="105" fill="#f2b544"/>
+                <circle cx="250" cy="280" r="58" fill="#4f7d6b"/>
+                <path d="M85 540 C180 470 320 470 415 540" fill="none" stroke="#201f1c" stroke-width="12" stroke-linecap="round"/>
+                <text x="250" y="635" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" letter-spacing="4" fill="#201f1c">PLACEHOLDER</text>
+              </svg>
+              <div class="gallery-caption"><span>Floral colour</span><small>Placeholder</small></div>
+            </article>
+
+            <article class="gallery-item">
+              <svg viewBox="0 0 500 420" aria-label="Placeholder colour artwork two">
+                <rect width="500" height="420" fill="#e7f0e8"/>
+                <path d="M85 315 C145 110 355 110 415 315Z" fill="#4f7d6b"/>
+                <path d="M135 315 C180 190 320 190 365 315Z" fill="#f2b544"/>
+                <circle cx="250" cy="245" r="38" fill="#d96f4e"/>
+                <text x="250" y="380" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" fill="#201f1c">PLACEHOLDER</text>
+              </svg>
+              <div class="gallery-caption"><span>Nature</span><small>Placeholder</small></div>
+            </article>
+
+            <article class="gallery-item">
+              <svg viewBox="0 0 500 420" aria-label="Placeholder colour artwork three">
+                <rect width="500" height="420" fill="#eee9f2"/>
+                <rect x="105" y="85" width="290" height="230" rx="115" fill="#76619c"/>
+                <rect x="145" y="125" width="210" height="150" rx="75" fill="#f5f2eb"/>
+                <circle cx="250" cy="200" r="38" fill="#d96f4e"/>
+                <text x="250" y="380" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" fill="#201f1c">PLACEHOLDER</text>
+              </svg>
+              <div class="gallery-caption"><span>Neo-traditional</span><small>Placeholder</small></div>
+            </article>
+
+            <article class="gallery-item">
+              <svg viewBox="0 0 500 420" aria-label="Placeholder colour artwork four">
+                <rect width="500" height="420" fill="#f8e8dc"/>
+                <path d="M250 75 C335 170 350 260 250 355 C150 260 165 170 250 75Z" fill="#d96f4e"/>
+                <path d="M250 145 C295 205 305 265 250 320 C195 265 205 205 250 145Z" fill="#f2b544"/>
+                <text x="250" y="395" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" fill="#201f1c">PLACEHOLDER</text>
+              </svg>
+              <div class="gallery-caption"><span>Botanical</span><small>Placeholder</small></div>
+            </article>
+
+            <article class="gallery-item">
+              <svg viewBox="0 0 500 420" aria-label="Placeholder colour artwork five">
+                <rect width="500" height="420" fill="#e9f1f5"/>
+                <circle cx="165" cy="185" r="72" fill="#4f7d6b"/>
+                <circle cx="335" cy="185" r="72" fill="#d96f4e"/>
+                <circle cx="250" cy="270" r="72" fill="#f2b544"/>
+                <text x="250" y="395" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" fill="#201f1c">PLACEHOLDER</text>
+              </svg>
+              <div class="gallery-caption"><span>Illustrative</span><small>Placeholder</small></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HEALED VS FRESH -->
+    <section class="section healed">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Healed vs fresh</span>
+          <h2>Judge it healed,<br>not just fresh.</h2>
+          <p>
+            Fresh tattoos can look darker, shinier and slightly swollen. The
+            final result settles after healing.
+          </p>
+        </div>
+
+        <div class="comparison">
+          <article class="comparison-card">
+            <h3>Fresh work</h3>
+            <p>Immediately after the appointment, colour and black ink may appear more saturated.</p>
+            <ul>
+              <li>Colour can look especially bright</li>
+              <li>Surface shine may be present</li>
+              <li>Mild redness or swelling is normal</li>
+            </ul>
+          </article>
+
+          <div class="comparison-arrow" aria-hidden="true">→</div>
+
+          <article class="comparison-card">
+            <h3>Healed work</h3>
+            <p>Once healed, the tattoo shows its true contrast, softness and colour balance.</p>
+            <ul>
+              <li>Black & gray settles into softer tones</li>
+              <li>Colour becomes more natural</li>
+              <li>Linework and shading are easier to judge</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="section" id="booking">
+      <div class="container booking-grid">
+        <div class="booking-info">
+          <span class="eyebrow">Booking</span>
+          <h2>Request your<br>appointment</h2>
+
+          <p>
+            Tell us about your idea, preferred artist and ideal date or time.
+            We will reply to confirm availability and discuss the next steps.
+          </p>
+
+          <div class="policy">
+            <strong>Deposit policy</strong>
+            <p>
+              All bookings require a deposit to secure your appointment.
+              Your deposit details and appointment confirmation will be shared
+              after your enquiry is reviewed.
+            </p>
+          </div>
+
+          <p>
+            Prefer email? Contact us directly at
+            <a href="mailto:castlecitytattoo@gmail.com"><strong>castlecitytattoo@gmail.com</strong></a>.
+          </p>
+
+          <div class="contact-actions">
+            <a class="button" href="mailto:castlecitytattoo@gmail.com?subject=Appointment%20enquiry%20—%20Castle%20City%20Tattoo">Email the studio</a>
+            <a class="button secondary" href="https://wa.me/1234567890" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+
+        <form class="booking-form" id="bookingForm">
+          <h3>Appointment enquiry</h3>
+          <p>Complete the form and your details will open in WhatsApp, ready to send.</p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Name *</label>
+              <input id="name" name="name" type="text" placeholder="Your full name" required autocomplete="name">
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone *</label>
+              <input id="phone" name="phone" type="tel" placeholder="Your phone number" required autocomplete="tel">
+            </div>
+
+            <div class="field">
+              <label for="artist">Artist choice *</label>
+              <select id="artist" name="artist" required>
+                <option value="" selected disabled>Choose an artist</option>
+                <option value="Rachael — Black & gray">Rachael — Black & gray</option>
+                <option value="Emily — Colour">Emily — Colour</option>
+                <option value="No preference">No preference</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="preferredDate">Preferred date / time *</label>
+              <input id="preferredDate" name="preferredDate" type="text" placeholder="e.g. Friday afternoon" required>
+            </div>
+
+            <div class="field full">
+              <label for="tattooIdea">Tattoo idea *</label>
+              <textarea id="tattooIdea" name="tattooIdea" placeholder="Describe your idea, approximate size and placement…" required></textarea>
+            </div>
+          </div>
+
+          <button class="button" type="submit" style="width:100%; margin-top:20px;">
+            Send enquiry via WhatsApp
+          </button>
+
+          <p class="form-note">
+            This demo uses the placeholder WhatsApp number 1234567890.
+            Replace it with the studio’s real number before publishing.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Before you book</h2>
+          <p>A few useful details before sending your enquiry.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              Do you accept walk-ins?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              No. Castle City Tattoo is appointment-only so each client receives
+              dedicated consultation and studio time.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              Is a deposit required?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. Bookings require a deposit to secure your appointment.
+              Deposit instructions will be provided when your booking is confirmed.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              How do I choose between Rachael and Emily?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Rachael specialises in black & gray work, while Emily focuses on
+              colour pieces. Review their portfolios or select “No preference”
+              and describe your idea.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              How should I send my tattoo idea?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Include a clear description, approximate size, placement and any
+              reference images you would like the artist to consider.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              Where is the studio located?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Castle City Tattoo is located in Greencastle, Indiana.
+              Exact appointment details will be shared when your booking is confirmed.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Castle City Tattoo</div>
+          <p style="margin-top:12px;">Private, appointment-only tattoo studio<br>Greencastle, Indiana</p>
+        </div>
+
+        <div>
+          <h4>Artists</h4>
+          <div class="footer-links">
+            <a href="#portfolio">Rachael — Black & gray</a>
+            <a href="#portfolio">Emily — Colour</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="mailto:castlecitytattoo@gmail.com">castlecitytattoo@gmail.com</a>
+            <a href="https://wa.me/1234567890" target="_blank" rel="noopener">WhatsApp enquiry</a>
+            <a href="#booking">Request appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Castle City Tattoo. All rights reserved.</span>
+        <button class="back-top" type="button" id="backTop">Back to top ↑</button>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Placeholder WhatsApp number requested for this demo.
+    const WHATSAPP_NUMBER = "1234567890";
+
+    const bookingForm = document.getElementById("bookingForm");
+
+    bookingForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const artist = document.getElementById("artist").value;
+      const tattooIdea = document.getElementById("tattooIdea").value.trim();
+      const preferredDate = document.getElementById("preferredDate").value.trim();
+
+      const message =
+`Hello Castle City Tattoo,
+
+I would like to request an appointment.
+
+Name: ${name}
+Phone: ${phone}
+Artist choice: ${artist}
+Preferred date/time: ${preferredDate}
+
+Tattoo idea:
+${tattooIdea}
+
+I understand that bookings require a deposit.`;
+
+      const whatsappUrl =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappUrl, "_blank", "noopener");
+    });
+
+    // FAQ accordions
+    document.querySelectorAll(".faq-question").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const item = button.closest(".faq-item");
+        const isOpen = item.classList.contains("open");
+
+        document.querySelectorAll(".faq-item").forEach(function (faqItem) {
+          faqItem.classList.remove("open");
+          faqItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+        });
+
+        if (!isOpen) {
+          item.classList.add("open");
+          button.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+    // Footer year and back-to-top
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("backTop").addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
